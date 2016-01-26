@@ -131,6 +131,76 @@
   </section>
 </section>
 
+
+<section>
+  <section>
+    <h2>Fixing the keyboard-only experience</h2>
+  </section>
+  <section>
+    <h3>Expected behaviour</h3>
+    <ol>
+      <li>Press TAB until I can see the button has focus.</li>
+      <li>Press space or enter to activate the button.</li>
+    </ol>
+  </section>
+  <section>
+    <h3><em>Allow</em> keyboard focus</h3>
+     <pre><code class="html">
+  <div id="main-menu">
+    <div id="main-menu-button" tabindex=0>
+      <i class="fa fa-bars"></i>
+      <span>Main Menu</span>
+    </div>
+    // ... list of menu links
+  </div>
+    </code></pre>
+    <p>Add a <code>tabindex=0</code> attribute to our &ltdiv&gt;.</p>
+    <p>Keyboard focus is now possible, but the button<br /> does not yet respond to keypress.</p>
+  </section>
+  <section>
+    <h3><em>Indicate</em> the focus</h3>
+    <pre><code class="css">
+    #main-menu-button {
+      background-color: #444444;
+      color: #ffffff;
+    }
+
+    #main-menu-button:focus {
+      background-color: #ffffff;
+      color: #444444;
+    }
+    </code></pre>
+    <p>Use CSS to make it <em>very obvious</em> that the button has focus.</p>
+    <p>In this example, we invert the colour contrast.</p>
+    <p>Avoid styles which are too subtle.</p>
+  </section>
+  <section>
+    <h3><em>Respond</em> to keypress</h3>
+    <pre><code class="javasscript">
+      // Add the open/close behaviour.
+      $('#main-menu-button')
+        .keypress( function(event) {
+          // Only respond to enter or spacebar keys
+          if (event.which == 13 || event.which == 32) {
+            // Spacebar usually triggers page scrolling.
+            event.preventDefault();
+            $(this).trigger('click');
+          }
+        })
+        .click(function(event) {
+          $('#main-menu nav').toggle();
+          // or something fancier...
+        });
+    </code></pre>
+    <p>Listen for keypress event, confirm which button was pressed, and trigger a click() event.</p>
+  </section>
+  <section>
+    <h3>DEMO 2</h3>
+    <p><em>"Works with a keyboard"</em></p>
+    <p><small>Git tag: <a href="https://github.com/fuzzbomb/mobile-menu-a11y-demo/releases/tag/milestone-works-with-mouse-and-keyboard">milestone-works-with-mouse-and-keyboard (3b8622c)</a></small></p>
+  </section>
+</section>
+
 <section>
   <h2>The End</h2>
   <p>Any Questions?</p>
