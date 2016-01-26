@@ -276,13 +276,10 @@
     <pre><code class="javascript">$('#main-menu-button')
   .attr('aria-controls', 'main-menu-nav')
   .keypress( function(event) {
-    if (event.which == 13 || event.which == 32) {
-      event.preventDefault();
-      $(this).trigger('click');
-    }
+    /* Handle keypress */
   })
   .click(function(event) {
-    // The open/close behaviour ...
+    /* The open/close behaviour acts on '#main-menu nav' */
   });</code></pre>
   </section>
   <section>
