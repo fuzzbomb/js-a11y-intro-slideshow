@@ -249,6 +249,12 @@
   </section>
   <section>
     <h3>Indicate it is a <em>button</em></h3>
+    <pre><code class="html"><div role="button" id="main-menu-button" tabindex=0>
+  <i class="fa fa-bars"></i>
+  <span class="visuallyhidden">Main Menu</span>
+</div>
+</code></pre>
+    <p>Adding <code>role=button</code> to the &lt;div&gt; overrides the default HTML semantic, so screenreaders can announce it as a "button" (or sometimes "clickable").</p>
   </section>
   <section>
     <h3>Describe the <em>behaviour</em> of the button</h3>
