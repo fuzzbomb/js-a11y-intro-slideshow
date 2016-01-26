@@ -312,7 +312,7 @@
 <section>
   <section>
     <h2>Code improvements</h2>
-    <p>We <em>broke</em> the golden rule of ARIA. Avoid using ARIA semantics to provide a role, where HTML already provides the role with an equivalent element.</p>
+    <p>We actually <em>broke</em> the golden rule of ARIA. Avoid using ARIA semantics to provide a role, where HTML already provides the role with an equivalent element.</p>
     <p>In our case we used:</p>
     <pre><code class="html">
       <div role=button></div>
@@ -324,7 +324,7 @@
   </section>
   <section>
     <h3>More improvements</h3>
-    <p>After replacing the &lt;div role=button&gt; with a real HTML &lt;button&gt;, we can remove a few things to simplify the code...</p>
+    <p>After replacing the &lt;div role=button&gt; with a <em>real</em> HTML &lt;button&gt;, we can remove a few things to simplify the code...</p>
     <ul>
       <li>tabindex=0 is no longer needed - a &lt;button&gt; is focusable.</li>
       <li>The jQuery.keypress() handler isn't needed either! The browser handles a keypress for &lt;button&gt;.</li>
