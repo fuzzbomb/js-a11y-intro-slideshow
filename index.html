@@ -289,6 +289,22 @@
   </section>
   <section>
     <h3><code>aria-expanded</code> state</h3>
+    <pre><code class="javascript">$('#main-menu-button')
+  .attr('aria-controls', 'main-menu-nav')
+  .attr('aria-expanded', false) // NEW, initialize
+  .keypress( function(event) { /* Handle keypress */ })
+  .click(function(event) {
+    if (menuDisplayed === true) {
+      $('#main-menu nav').hide();
+      $(this).attr('aria-expanded', false) // NEW
+      menuDisplayed = false;
+    } else {
+      $('#main-menu nav').show();
+      $(this).attr('aria-expanded', true) // NEW
+      menuDisplayed = true;
+    }
+  });</code></pre>
+  <p>We initialize aria-expanded as false, to match the initial appearance of the menu, and update it whenever we show or hide the menu.</p>
   </section>
 </section>
 
