@@ -313,6 +313,27 @@
   </section>
 </section>
 
+<!-- Slide-set: refactor -->
+<section>
+  <section>
+    <h2>Refactor</h2>
+    <p>We <em>broke</em> the golden rule of ARIA. Avoid using ARIA semantics to provide a role, where HTML already provides the role with an equivalent element.</p>
+    <p>In our case we used:</p>
+    <pre><code class="html">
+      <div role=button></div>
+    </code></pre>
+    <p>When we ought to have used:</p>
+    <pre><code class="html">
+      <button></button>
+    </code></pre>
+  </section>
+  <section>
+    <h3>Other refactorings</h3>
+  </section>
+
+</section>
+
+
 <section>
   <h2>The End</h2>
   <p>Any Questions?</p>
