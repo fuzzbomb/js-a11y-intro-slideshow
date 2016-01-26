@@ -192,7 +192,6 @@
   <section>
     <h3><em>Respond</em> to keypress</h3>
     <pre><code class="javascript">
-      // Add the open/close behaviour.
       $('#main-menu-button')
         .keypress( function(event) {
           // Only respond to enter or spacebar keys
@@ -203,8 +202,8 @@
           }
         })
         .click(function(event) {
-          $('#main-menu nav').toggle();
-          // or something fancier...
+          // The open/close behaviour
+          // ...
         });
     </code></pre>
     <p>Listen for keypress event, confirm which button was pressed, and trigger a click() event.</p>
