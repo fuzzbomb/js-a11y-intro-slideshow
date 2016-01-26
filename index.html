@@ -201,6 +201,49 @@
   </section>
 </section>
 
+
+<section>
+  <section>
+    <h2>Improving the screen-reader experience</h2>
+    <p>Aim to provide a screenreader user with an idea of<br /> what the button can be <em>used for</em>.</p>
+    <ol>
+      <li>Describe the button:
+        <ul>
+          <li>Indicate it is a <em>button</em></li>
+          <li>Announce the <em>name</em> of the button</li>
+        </ul>
+      </li>
+      <li>Describe the <em>behaviour</em> of the button:
+        <ul>
+          <li>Expanded</li>
+          <li>Collapsed</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+  <section>
+    <h3>Indicate it is a <em>button</em></h3>
+  </section>
+  <section>
+    <h3>Announce the <em>name</em> of the button</h3>
+  </section>
+  <section>
+    <h3>Describe the <em>behaviour</em> of the button</h3>
+    <p>We'll use two ARIA attributes in tandem.</p>
+    <ul>
+      <li><code>aria-controls</code> indicates a relationship between two elements (the button controls the list of links).</li>
+      <li><code>aria-expanded</code> indicates whether the list is currently shown.</li>
+    </ul>
+    <p>Note: both of these attributes need to go on the button element itself.</p>
+  </section>
+  <section>
+    <h3><code>aria-controls</code> property</h3>
+  </section>
+  <section>
+    <h3><code>aria-expanded</code> state</h3>
+  </section>
+</section>
+
 <section>
   <h2>The End</h2>
   <p>Any Questions?</p>
