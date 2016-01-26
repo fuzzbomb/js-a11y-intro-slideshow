@@ -266,6 +266,26 @@
   </section>
   <section>
     <h3><code>aria-controls</code> property</h3>
+    <p>aria-controls needs an ID to refer to.</p>
+    <pre><code class="html"><div role="button" id="main-menu-button" tabindex=0>
+  <i class="fa fa-bars"></i>
+  <span class="visuallyhidden">Main Menu</span>
+</div>
+<nav id="main-menu-nav">
+  <ul> ... list of links ... </ul>
+</nav>
+</code></pre>
+    <pre><code class="javascript">$('#main-menu-button')
+  .attr('aria-controls', 'main-menu-nav')
+  .keypress( function(event) {
+    if (event.which == 13 || event.which == 32) {
+      event.preventDefault();
+      $(this).trigger('click');
+    }
+  })
+  .click(function(event) {
+    // The open/close behaviour ...
+  });</code></pre>
   </section>
   <section>
     <h3><code>aria-expanded</code> state</h3>
