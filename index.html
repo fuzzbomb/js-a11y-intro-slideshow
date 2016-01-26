@@ -121,18 +121,22 @@
   </section>
   <section>
     <h3>Javascript Behaviour</h3>
-    <pre><code class="javascript">
-    $(document).ready(function() {
+    <pre><code class="javascript">    $(document).ready(function() {
       // Initialize.
+      var menuDisplayed = false;
       $('#main-menu nav').hide();
-
       // Add the open/close behaviour.
       $('#main-menu-button').click(function(event) {
-          $('#main-menu nav').toggle();
-          // or something fancier...
+        if (menuDisplayed === true) {
+          $('#main-menu nav').hide();
+          menuDisplayed = false;
+        }
+        else {
+          $('#main-menu nav').show();
+          menuDisplayed = true;
+        }
       });
-    });
-    </code></pre>
+    }); </code></pre>
     <p>Bind a click handler to our &lt;div&gt; to toggle menu visibility.</p>
   </section>
   <section>
