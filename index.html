@@ -316,7 +316,7 @@
 <!-- Slide-set: refactor -->
 <section>
   <section>
-    <h2>Refactor</h2>
+    <h2>Code improvements</h2>
     <p>We <em>broke</em> the golden rule of ARIA. Avoid using ARIA semantics to provide a role, where HTML already provides the role with an equivalent element.</p>
     <p>In our case we used:</p>
     <pre><code class="html">
@@ -328,9 +328,14 @@
     </code></pre>
   </section>
   <section>
-    <h3>Other refactorings</h3>
+    <h3>More improvements</h3>
+    <p>After replacing the &lt;div role=button&gt; with a real HTML &lt;button&gt;, we can remove a few things to simplify the code...</p>
+    <ul>
+      <li>tabindex=0 is no longer needed - a &lt;button&gt; is focusable.</li>
+      <li>The jQuery.keypress() handler isn't needed either! The browser handles a keypress for &lt;button&gt;.</li>
+      <li>In fact, we <em>must</em> now remove the jQuery.keypress() handler, because the &lt;button&gt; will now have <em>two</em> keypress handlers, and the menu will be toggled twice from one keypress. Beware of introducing this bug!</li>
+    </ul>
   </section>
-
 </section>
 
 
