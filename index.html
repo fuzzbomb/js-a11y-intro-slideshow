@@ -109,7 +109,18 @@
   </section>
   <section>
     <h3>Custom Javascript Behvaiour</h3>
-    <code></code>
+    <pre><code class="javascript">
+    $(document).ready(function() {
+      // Initialize.
+      $('#main-menu nav').hide();
+
+      // Add the open/close behaviour.
+      $('#main-menu-button').click(function(event) {
+          $('#main-menu nav').toggle();
+          // or something fancier...
+      });
+    });
+    </code></pre>
   </section>
   <section>
     <h3>DEMO 1</h3>
