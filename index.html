@@ -393,6 +393,14 @@
   <p>We initialize aria-expanded as false, to match the initial appearance of the menu, and update it whenever we show or hide the menu.</p>
   </section>
   <section>
+    <h3>Notes about aria-expanded</h3>
+    <ul>
+      <li>aria-expanded doesn't actually hide the list of links - it just provides a way to indicate the state to a screenreader.</li>
+      <li>CSS display:none is doing the real work of hiding content - this comes via jQuery.hide().</li>
+      <li>DO NOT initialize aria-expanded in the HTML source. Always do this in the JS, in case the JS doesn't load for some reason.</li>
+    </ul>
+  </section>
+  <section>
     <h3>Demo</h3>
     <p><em>"Works with a screenreader"</em></p>
     <p><small>Git tag: <a href="https://github.com/fuzzbomb/mobile-menu-a11y-demo/releases/tag/milestone-works-with-mouse-keyboard-screenreader">milestone-works-with-mouse-keyboard-screenreader (ad3fa57)</a></small></p>
