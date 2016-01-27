@@ -366,12 +366,37 @@
 <section>
   <section>
     <h2>Introducing WAI-ARIA</h2>
+    <p>HTML is NOT a user interface language.</p>
+    <p>ARIA provides vocabulary of UI roles, states, and properties.</p>
+    <p>They express the range of interaction found in native Desktop and Mobile UI widget APIs.</p>
+    <p>Formal, machine-readable semantics.</p>
   </section>
   <section>
-    <h3></h3>
+    <h3>An ARIA buffet</h3>
+    <ul>
+      <li>Roles: navigation, menubar, spinbutton, tablist, ...</li>
+      <li>States: expanded, pressed, invalid, grabbed, ...</li>
+      <li>Relationships: labelled-by, described-by, controls, ...</li>
+      <li>Properties: haspopup, dropeffect, readonly, ...</li>
+    </ul>
   </section>
   <section>
-    <h3></h3>
+    <h3>The Golden Rules of ARIA</h3>
+    </p>Do NOT use an aria-* role or property,<br />if an equiavlent one already exists in HTML.</p>
+    <p>Host-language semantics are preferred.</p>
+    <p>Use sparingly!</p>
+  </section>
+  <section>
+    <h3>Other Uses of ARIA</h3>
+    <ul>
+      <li>Use in other languages: SVG, MathML, ...</li>
+      <li>Sometimes <em>safer</em> to over-ride a HTML native role.<br />
+          Avoids breaking CSS or JS which deals with elements by tag names.</li>
+      <li>Complex relationships: text inputs in a table can be labelled by both Column and Row headers.</li>
+      <li>ASCII art!<br />
+          &lt;pre role=&quot;image&quot; aria-label=&quot;ASCII art picture of a fish&quot;&gt;<br />
+          equivalent to &lt;img alt=&quot;ASCII art fish&quot;/&gt;</li>
+    </ul>
   </section>
 </section>
 
